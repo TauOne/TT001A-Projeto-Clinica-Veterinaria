@@ -9,45 +9,47 @@ package Model;
  * @author saina
  */
 public class Pessoa {
-    private int codPessoa;
-    private String nomePessoa;
-    private String endPessoa;
-    private String telPessoa;
+    private int codigo;
+    private String nome;
+    private String endereco;
+    private String telefone;
 
-    public Pessoa(int codPessoa, String nomePessoa, String endPessoa, String telPessoa) {
-        this.codPessoa = codPessoa;
-        this.nomePessoa = nomePessoa;
-        this.endPessoa = endPessoa;
-        this.telPessoa = telPessoa;
+    public Pessoa(int codigo, String nome, String endereco, String telefone) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
     }
 
-    public int getCodPessoa() {
-        return codPessoa;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public String getNomePessoa() {
-        return nomePessoa;
+    private void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
-    public String getEndPessoa() {
-        return endPessoa;
+    public String getNome() {
+        return nome;
     }
 
-    public String getTelPessoa() {
-        return telPessoa;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setNomePessoa(String nomePessoa) {
-        this.nomePessoa = nomePessoa;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndPessoa(String endPessoa) {
-        this.endPessoa = endPessoa;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
-    public void setTelPessoa(String telPessoa) {
-        this.telPessoa = telPessoa;
+    public String getTelefone() {
+        return telefone;
     }
-    
-    
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 }

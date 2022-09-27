@@ -11,35 +11,39 @@ import java.util.Date;
  * @author saina
  */
 public class Tratamento {
-    private int codTrat;
-    private Date dataIni;
+    private int codigo;
+    private Date dataInico;
     private Date dataFim;
 
-    public Tratamento(int codTrat, Date dataIni, Date dataFim) {
-        this.codTrat = codTrat;
-        this.dataIni = dataIni;
+    public Tratamento(int codigo, Date dataInico, Date dataFim) {
+        this.codigo = codigo;
+        this.dataInico = dataInico;
         this.dataFim = dataFim;
     }
 
-    public int getCodTrat() {
-        return codTrat;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public Date getDataIni() {
-        return dataIni;
+    private void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public Date getDataInico() {
+        return dataInico;
+    }
+
+    public void setDataInico(Date dataInico) {
+        this.dataInico = dataInico;
     }
 
     public Date getDataFim() {
         return dataFim;
     }
 
-    public void setDataIni(Date dataIni) {
-        this.dataIni = dataIni;
-    }
-
     public void setDataFim(Date dataFim) {
         this.dataFim = dataFim;
     }
-    
+
     
 }

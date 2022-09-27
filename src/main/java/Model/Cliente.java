@@ -9,29 +9,29 @@ package Model;
  * @author saina
  */
 public class Cliente extends Pessoa{
-    private String cepCliente;
-    private String mailCliente;
+    private String cep;
+    private String email;
 
-    public Cliente(String cepCliente, String mailCliente, int codPessoa, String nomePessoa, String endPessoa, String telPessoa) {
-        super(codPessoa, nomePessoa, endPessoa, telPessoa);
-        this.cepCliente = cepCliente;
-        this.mailCliente = mailCliente;
+    public Cliente(String cep, String email, int codigo, String nome, String endereco, String telefone) {
+        super(codigo, nome, endereco, telefone);
+        this.cep = cep;
+        this.email = email;
     }
 
-    public String getCepCliente() {
-        return cepCliente;
+    public String getCep() {
+        return cep;
     }
 
-    public String getMailCliente() {
-        return mailCliente;
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
-    public void setCepCliente(String cepCliente) {
-        this.cepCliente = cepCliente;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMailCliente(String mailCliente) {
-        this.mailCliente = mailCliente;
+    public void setEmail(String email) {
+        this.email = email;
     }
     
     

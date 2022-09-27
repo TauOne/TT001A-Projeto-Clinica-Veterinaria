@@ -9,25 +9,29 @@ package Model;
  * @author saina
  */
 public class Especie {
-    private int codEspecie;
-    private String nomeEspecie;
+    private int codigo;
+    private String nome;
 
-    public Especie(int codEspecie, String nomeEspecie) {
-        this.codEspecie = codEspecie;
-        this.nomeEspecie = nomeEspecie;
+    public Especie(int codigo, String nome) {
+        this.codigo = codigo;
+        this.nome = nome;
     }
 
-    public int getCodEspecie() {
-        return codEspecie;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public String getNomeEspecie() {
-        return nomeEspecie;
+    private void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
-    public void setNomeEspecie(String nomeEspecie) {
-        this.nomeEspecie = nomeEspecie;
+    public String getNome() {
+        return nome;
     }
-    
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     
 }

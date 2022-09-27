@@ -9,35 +9,39 @@ package Model;
  * @author saina
  */
 public class Exame {
-    private int codExam;
-    private String descExam;
-    private String resulExam;
+    private int codigo;
+    private String descricao;
+    private String resultado;
 
-    public Exame(int codExam, String descExam, String resulExam) {
-        this.codExam = codExam;
-        this.descExam = descExam;
-        this.resulExam = resulExam;
+    public Exame(int codigo, String descricao, String resultado) {
+        this.codigo = codigo;
+        this.descricao = descricao;
+        this.resultado = resultado;
     }
 
-    public int getCodExam() {
-        return codExam;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public String getDescExam() {
-        return descExam;
+    private void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
-    public String getResulExam() {
-        return resulExam;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescExam(String descExam) {
-        this.descExam = descExam;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public void setResulExam(String resulExam) {
-        this.resulExam = resulExam;
+    public String getResultado() {
+        return resultado;
     }
-    
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
+    }
+
     
 }

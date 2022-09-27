@@ -4,50 +4,54 @@
  */
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author saina
  */
 public class Animal {
-    private int codAnimal;
-    private String nomeAnimal;
-    private int idadeAnimal;
-    private char sexoAnimal;
+    private int codigo;
+    private String nome;
+    private Date nascimento;
+    private char sexo;
 
-    public Animal(int codAnimal, String nomeAnimal, int idadeAnimal, char sexoAnimal) {
-        this.codAnimal = codAnimal;
-        this.nomeAnimal = nomeAnimal;
-        this.idadeAnimal = idadeAnimal;
-        this.sexoAnimal = sexoAnimal;
+    public Animal(int codigo, String nome, Date nascimento, char sexo) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.nascimento = nascimento;
+        this.sexo = sexo;
     }
 
-    public int getCodAnimal() {
-        return codAnimal;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public String getNomeAnimal() {
-        return nomeAnimal;
+    private void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
-    public int getIdadeAnimal() {
-        return idadeAnimal;
+    public String getNome() {
+        return nome;
     }
 
-    public char getSexoAnimal() {
-        return sexoAnimal;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setNomeAnimal(String nomeAnimal) {
-        this.nomeAnimal = nomeAnimal;
+    public Date getNascimento() {
+        return nascimento;
     }
 
-    public void setIdadeAnimal(int idadeAnimal) {
-        this.idadeAnimal = idadeAnimal;
+    public void setNascimento(Date nascimento) {
+        this.nascimento = nascimento;
     }
 
-    public void setSexoAnimal(char sexoAnimal) {
-        this.sexoAnimal = sexoAnimal;
+    public char getSexo() {
+        return sexo;
     }
-    
-    
+
+    public void setSexo(char sexo) {
+        this.sexo = sexo;
+    }
 }

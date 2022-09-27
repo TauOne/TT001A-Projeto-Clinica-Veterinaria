@@ -11,18 +11,18 @@ import java.util.Date;
  * @author saina
  */
 public class Consulta {
-    private Date dataCons;
+    private Date dataConsulta;
     private String sintomas;
     private String historico;
 
     public Consulta(Date dataCons, String sintomas, String historico) {
-        this.dataCons = dataCons;
+        this.dataConsulta = dataCons;
         this.sintomas = sintomas;
         this.historico = historico;
     }
 
     public Date getDataCons() {
-        return dataCons;
+        return dataConsulta;
     }
 
     public String getSintomas() {
