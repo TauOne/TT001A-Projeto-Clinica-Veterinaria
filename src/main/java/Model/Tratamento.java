@@ -12,13 +12,15 @@ import java.util.Date;
  */
 public class Tratamento {
     private int codigo;
+    private int idAnimal;
     private Date dataInico;
     private Date dataFim;
 
-    public Tratamento(int codigo, Date dataInico, Date dataFim) {
+    public Tratamento(int codigo, int idAnimal, Date dataInico, Date dataFim) {
         this.codigo = codigo;
         this.dataInico = dataInico;
         this.dataFim = dataFim;
+        this.idAnimal = idAnimal;
     }
 
     public int getCodigo() {
@@ -43,6 +45,14 @@ public class Tratamento {
 
     public void setDataFim(Date dataFim) {
         this.dataFim = dataFim;
+    }
+
+    public int getIdAnimal() {
+        return idAnimal;
+    }
+
+    private void setIdAnimal(int idAnimal) {
+        this.idAnimal = idAnimal;
     }
 
     
