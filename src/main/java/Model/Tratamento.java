@@ -18,17 +18,17 @@ public class Tratamento {
 
     public Tratamento(int codigo, int idAnimal, Date dataInico, Date dataFim) {
         this.codigo = codigo;
+        this.idAnimal = idAnimal;
         this.dataInico = dataInico;
         this.dataFim = dataFim;
-        this.idAnimal = idAnimal;
     }
 
     public int getCodigo() {
         return codigo;
     }
-
-    private void setCodigo(int codigo) {
-        this.codigo = codigo;
+    
+    public int getIdAnimal() {
+        return idAnimal;
     }
 
     public Date getDataInico() {
@@ -47,13 +47,4 @@ public class Tratamento {
         this.dataFim = dataFim;
     }
 
-    public int getIdAnimal() {
-        return idAnimal;
-    }
-
-    private void setIdAnimal(int idAnimal) {
-        this.idAnimal = idAnimal;
-    }
-
-    
 }

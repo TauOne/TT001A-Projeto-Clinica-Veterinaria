@@ -25,10 +25,6 @@ public class Pessoa {
         return codigo;
     }
 
-    private void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
     public String getNome() {
         return nome;
     }

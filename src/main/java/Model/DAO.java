@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public abstract class DAO {
 
-    public static final String DBURL = "jdbc:sqlite:vet2021.db";
+    public static final String DBURL = "jdbc:sqlite:ProjClinicVetTT001A2022";
     private static Connection con;
     protected static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 

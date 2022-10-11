@@ -10,8 +10,7 @@ package Model;
  */
 public class Veterinario extends Pessoa{
 
-    public Veterinario(int codPessoa, String nomePessoa, String endPessoa, String telPessoa) {
-        super(codPessoa, nomePessoa, endPessoa, telPessoa);
+    public Veterinario(int codigo, String nome, String endereco, String telefone) {
+        super(codigo, nome, endereco, telefone);
     }
-    
 }

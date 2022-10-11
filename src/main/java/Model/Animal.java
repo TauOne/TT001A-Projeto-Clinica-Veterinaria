@@ -12,12 +12,14 @@ import java.util.Date;
  */
 public class Animal {
     private int codigo;
+    private int codEspecie;
     private String nome;
     private Date nascimento;
     private char sexo;
 
-    public Animal(int codigo, String nome, Date nascimento, char sexo) {
+    public Animal(int codigo, int codEspecie, String nome, Date nascimento, char sexo) {
         this.codigo = codigo;
+        this.codEspecie = codEspecie;
         this.nome = nome;
         this.nascimento = nascimento;
         this.sexo = sexo;
@@ -27,10 +29,10 @@ public class Animal {
         return codigo;
     }
 
-    private void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public int getCodEspecie() {
+        return codEspecie;
     }
-
+    
     public String getNome() {
         return nome;
     }
@@ -53,5 +55,5 @@ public class Animal {
 
     public void setSexo(char sexo) {
         this.sexo = sexo;
-    }
+    }  
 }

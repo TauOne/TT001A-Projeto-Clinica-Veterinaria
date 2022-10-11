@@ -11,68 +11,51 @@ import java.util.Date;
  * @author saina
  */
 public class Consulta {
-    private Date dataConsulta;
+    private Date data;
     private String sintomas;
     private String historico;
-    private int idAnimal;
-    private int idVeterinario;
-    private int idTratamento;
+    private int codAnimal;
+    private int codVeterinario;
+    private int codTratamento;
 
-    public Consulta(Date dataConsulta, String sintomas, String historico, int idAnimal, int idVeterinario, int idTratamento) {
-        this.dataConsulta = dataConsulta;
+    public Consulta(Date data, String sintomas, String historico, int idAnimal, int idVeterinario, int idTratamento) {
+        this.data = data;
         this.sintomas = sintomas;
         this.historico = historico;
-        this.idAnimal = idAnimal;
-        this.idVeterinario = idVeterinario;
-        this.idTratamento = idTratamento;
+        this.codAnimal = idAnimal;
+        this.codVeterinario = idVeterinario;
+        this.codTratamento = idTratamento;
     }
 
+    public Date getData() {
+        return data;
+    }
+    
     public String getSintomas() {
         return sintomas;
-    }
-
-    public String getHistorico() {
-        return historico;
     }
 
     public void setSintomas(String sintomas) {
         this.sintomas = sintomas;
     }
 
+    public String getHistorico() {
+        return historico;
+    }
+
     public void setHistorico(String historico) {
         this.historico = historico;
     }
 
-    public Date getDataConsulta() {
-        return dataConsulta;
+    public int getCodAnimal() {
+        return codAnimal;
     }
 
-    public void setDataConsulta(Date dataConsulta) {
-        this.dataConsulta = dataConsulta;
+    public int getCodVeterinario() {
+        return codVeterinario;
     }
 
-    public int getIdAnimal() {
-        return idAnimal;
+    public int getCodTratamento() {
+        return codTratamento;
     }
-
-    public void setIdAnimal(int idAnimal) {
-        this.idAnimal = idAnimal;
-    }
-
-    public int getIdVeterinario() {
-        return idVeterinario;
-    }
-
-    public void setIdVeterinario(int idVeterinario) {
-        this.idVeterinario = idVeterinario;
-    }
-
-    public int getIdTratamento() {
-        return idTratamento;
-    }
-
-    public void setIdTratamento(int idTratamento) {
-        this.idTratamento = idTratamento;
-    }
-    
 }
