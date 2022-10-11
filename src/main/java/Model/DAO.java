@@ -94,6 +94,7 @@ public abstract class DAO {
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS animal( \n"
                     + "codigo INTEGER PRIMARY KEY, \n"
                     + "codEspecie INTEGER, \n"
+                    + "codCliente INTEGER, \n"
                     + "nome VARCHAR, \n"
                     + "nascimento DATE, \n"
                     + "sexo CHAR, \n");

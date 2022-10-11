@@ -10,11 +10,13 @@ package Model;
  */
 public class Exame {
     private int codigo;
+    private int codConsulta;
     private String descricao;
     private String resultado;
 
-    public Exame(int codigo, String descricao, String resultado) {
+    public Exame(int codigo, int codConsulta, String descricao, String resultado) {
         this.codigo = codigo;
+        this.codConsulta = codConsulta;
         this.descricao = descricao;
         this.resultado = resultado;
     }
@@ -22,22 +24,26 @@ public class Exame {
     public int getCodigo() {
         return codigo;
     }
-    
-    public String getDescricao() {
-        return descricao;
+
+    public int getCodConsulta() {
+        return codConsulta;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public String getDescricao() {
+        return descricao;
     }
 
     public String getResultado() {
         return resultado;
     }
 
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public void setResultado(String resultado) {
         this.resultado = resultado;
     }
-
+    
     
 }
