@@ -83,19 +83,17 @@ public abstract class DAO {
     protected final boolean createTable() {
         try {
             PreparedStatement stmt;
-            stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS pessoa( \n"
+            stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS cliente( \n"
                     + "codigo INTEGER PRIMARY KEY, \n"
                     + "nome VARCHAR, \n"
                     + "endereco VARCHAR, \n"
-                    + "telefone VARCHAR, \n");
-            executeUpdate(stmt);
-            stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS cliente( \n"
-                    + "FOREIGN KEY(codigo) REFERENCES artist(pessoa) PRIMARY KEY, \n"
+                    + "telefone VARCHAR, \n"
                     + "cep VARCHAR, \n"
                     + "email VARCHAR); \n");
             executeUpdate(stmt);
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS animal( \n"
                     + "codigo INTEGER PRIMARY KEY, \n"
+                    + "codEspecie INTEGER, \n"
                     + "nome VARCHAR, \n"
                     + "nascimento DATE, \n"
                     + "sexo CHAR, \n");
@@ -105,17 +103,24 @@ public abstract class DAO {
                     + "nome VARCHAR); \n");
             executeUpdate(stmt);
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS veterinario( \n"
-                    + "codigo INTEGER REFERENCES pessoa PRIMARY KEY, \n");
+                    + "codigo INTEGER PRIMARY KEY, \n"
+                    + "nome VARCHAR, \n"
+                    + "endereco VARCHAR, \n"
+                    + "telefone VARCHAR, \n");
             executeUpdate(stmt);
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS tratamento( \n"
                     + "codigo INTEGER PRIMARY KEY, \n"
+                    + "codAnimal INTEGER, \n"
                     + "dataInicio DATE, \n"
                     + "dataFim DATE, \n");
             executeUpdate(stmt);
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS consulta( \n"
                     + "dara DATE PRIMARY KEY, \n"
                     + "sintomas TEXT, \n"
-                    + "historico TEXT); \n");
+                    + "historico TEXT, \n"
+                    + "codAnimal INTEGER, \n"
+                    + "codVeterinario INTEGER, \n"
+                    + "codTratamento INTEGER, \n");
             executeUpdate(stmt);
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS exame( \n"
                     + "codigo INTEGER PRIMARY KEY, \n"

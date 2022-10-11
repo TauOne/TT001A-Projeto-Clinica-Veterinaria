@@ -22,11 +22,7 @@ public class Exame {
     public int getCodigo() {
         return codigo;
     }
-
-    private void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
+    
     public String getDescricao() {
         return descricao;
     }
