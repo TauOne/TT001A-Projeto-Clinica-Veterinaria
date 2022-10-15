@@ -4,27 +4,28 @@
  */
 package Model;
 
-import java.util.Date;
+import java.time.Instant;
 
 /**
  *
  * @author saina
  */
 public class Animal {
+
     private int codigo;
+    private String nome;
+    private Instant nascimento;
+    private char sexo;
     private int codEspecie;
     private int codCliente;
-    private String nome;
-    private Date nascimento;
-    private char sexo;
 
-    public Animal(int codigo, int codEspecie, int codCliente, String nome, Date nascimento, char sexo) {
+    public Animal(int codigo, String nome, Instant nascimento, char sexo, int codEspecie, int codCliente) {
         this.codigo = codigo;
-        this.codEspecie = codEspecie;
-        this.codCliente = codCliente;
         this.nome = nome;
         this.nascimento = nascimento;
         this.sexo = sexo;
+        this.codEspecie = codEspecie;
+        this.codCliente = codCliente;
     }
 
     public int getCodigo() {
@@ -43,7 +44,7 @@ public class Animal {
         return nome;
     }
 
-    public Date getNascimento() {
+    public Instant getNascimento() {
         return nascimento;
     }
 
@@ -55,7 +56,7 @@ public class Animal {
         this.nome = nome;
     }
 
-    public void setNascimento(Date nascimento) {
+    public void setNascimento(Instant nascimento) {
         this.nascimento = nascimento;
     }
 
@@ -63,5 +64,4 @@ public class Animal {
         this.sexo = sexo;
     }
 
-    
 }

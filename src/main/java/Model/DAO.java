@@ -62,9 +62,9 @@ public abstract class DAO {
         int lastId = -1;
         try {
             s = (Statement) con.createStatement();
-            ResultSet rs = s.executeQuery("SELECT MAX(" + primaryKey + ") AS id FROM " + tableName);
+            ResultSet rs = s.executeQuery("SELECT MAX(" + primaryKey + ") AS codigo FROM " + tableName);
             if (rs.next()) {
-                lastId = rs.getInt("id");
+                lastId = rs.getInt("codigo");
             }
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());
@@ -96,7 +96,7 @@ public abstract class DAO {
                     + "codEspecie INTEGER, \n"
                     + "codCliente INTEGER, \n"
                     + "nome VARCHAR, \n"
-                    + "nascimento DATE, \n"
+                    + "nascimento VARCHAR, \n"
                     + "sexo CHAR, \n");
             executeUpdate(stmt);
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS especie( \n"
@@ -128,7 +128,7 @@ public abstract class DAO {
                     + "descricao VARCHAR, \n"
                     + "resultado VARCHAR); \n");
             executeUpdate(stmt);
-            stmt = DAO.getConnection().prepareStatement("INSERT OR IGNORE INTO especie (id, nome) VALUES (1, 'Cachorro')");
+            stmt = DAO.getConnection().prepareStatement("INSERT OR IGNORE INTO especie (codigo, nome) VALUES (1, 'Peixe')");
             executeUpdate(stmt);
             return true;
         } catch (SQLException ex) {

@@ -11,4 +11,11 @@
         <maven.compiler.target>18</maven.compiler.target>
         <exec.mainClass>com.mycompany.projetoclinicaveterinaria.ProjetoClinicaVeterinaria</exec.mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.8.7</version>
+        </dependency>
+    </dependencies>
 </project>
