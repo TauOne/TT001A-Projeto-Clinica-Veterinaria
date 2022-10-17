@@ -6,16 +6,18 @@ package Model;
 
 /**
  *
- * @author saina
+ * @author Tauan Rodrigues 247599
  */
 public class Exame {
     private int codigo;
+    private String nome;
     private int codConsulta;
     private String descricao;
     private String resultado;
 
-    public Exame(int codigo, int codConsulta, String descricao, String resultado) {
+    public Exame(int codigo, String nome, int codConsulta, String descricao, String resultado) {
         this.codigo = codigo;
+        this.nome = nome;
         this.codConsulta = codConsulta;
         this.descricao = descricao;
         this.resultado = resultado;
@@ -43,6 +45,14 @@ public class Exame {
 
     public void setResultado(String resultado) {
         this.resultado = resultado;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
     
     

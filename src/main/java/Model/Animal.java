@@ -8,7 +8,7 @@ import java.time.Instant;
 
 /**
  *
- * @author saina
+ * @author Tauan
  */
 public class Animal {
 

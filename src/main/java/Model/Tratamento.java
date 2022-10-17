@@ -4,22 +4,23 @@
  */
 package Model;
 
-import java.util.Date;
+import java.time.Instant;
+
 
 /**
  *
- * @author saina
+ * @author Tauan Rodrigues 247599
  */
 public class Tratamento {
     private int codigo;
     private int codAnimal;
-    private Date dataInico;
-    private Date dataFim;
+    private Instant dataInicio;
+    private Instant dataFim;
 
-    public Tratamento(int codigo, int codAnimal, Date dataInico, Date dataFim) {
+    public Tratamento(int codigo, int codAnimal, Instant dataInicio, Instant dataFim) {
         this.codigo = codigo;
         this.codAnimal = codAnimal;
-        this.dataInico = dataInico;
+        this.dataInicio = dataInicio;
         this.dataFim = dataFim;
     }
 
@@ -27,23 +28,23 @@ public class Tratamento {
         return codigo;
     }
     
-    public int getIdAnimal() {
+    public int getCodAnimal() {
         return codAnimal;
     }
 
-    public Date getDataInico() {
-        return dataInico;
+    public Instant getDataInicio() {
+        return dataInicio;
     }
 
-    public void setDataInico(Date dataInico) {
-        this.dataInico = dataInico;
+    public void setDataInico(Instant dataInico) {
+        this.dataInicio = dataInico;
     }
 
-    public Date getDataFim() {
+    public Instant getDataFim() {
         return dataFim;
     }
 
-    public void setDataFim(Date dataFim) {
+    public void setDataFim(Instant dataFim) {
         this.dataFim = dataFim;
     }
 

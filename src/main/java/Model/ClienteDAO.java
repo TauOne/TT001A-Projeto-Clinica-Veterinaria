@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author saina
+ * @author Tauan Rodrigues 247599
  */
 public class ClienteDAO extends DAO{
     private static ClienteDAO instance;
@@ -95,7 +95,7 @@ public class ClienteDAO extends DAO{
     public void update(Cliente cliente) {
         try {
             PreparedStatement stmt;
-            stmt = DAO.getConnection().prepareStatement("UPDATE cliente SET nome=?, endereco=?, telefone=?, cep=?, email=? WHERE id=?");
+            stmt = DAO.getConnection().prepareStatement("UPDATE cliente SET nome=?, endereco=?, telefone=?, cep=?, email=? WHERE codigo=?");
             stmt.setString(1, cliente.getNome());
             stmt.setString(2, cliente.getEndereco());            
             stmt.setString(3, cliente.getTelefone());

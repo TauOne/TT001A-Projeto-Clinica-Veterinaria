@@ -7,7 +7,7 @@ package View;
 
 /**
  *
- * @author saina
+ * @author Tauan Rodrigues 247599
  */
 public class Main {
 

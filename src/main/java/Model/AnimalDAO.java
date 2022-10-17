@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author saina
+ * @author Tauan Rodrigues 247599
  */
 public class AnimalDAO extends DAO {
         private static AnimalDAO instance;
@@ -44,14 +44,6 @@ public class AnimalDAO extends DAO {
             Logger.getLogger(AnimalDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return this.retrieveById(lastId("animal","codigo"));
-    }
-    
-    public boolean isLastEmpty(){
-        Animal lastAnimal = this.retrieveById(lastId("animal","codigo"));
-        if (lastAnimal != null) {
-            return lastAnimal.getNome().isBlank();
-        }
-        return false;
     }
 
     private Animal buildObject(ResultSet rs) {
@@ -89,6 +81,9 @@ public class AnimalDAO extends DAO {
         List<Animal> animais = this.retrieve("SELECT * FROM animais WHERE codigo = " + id);
         return (animais.isEmpty()?null:animais.get(0));
     }
+    public List retrieveByClientId(int id) {
+        return this.retrieve("SELECT * FROM animais WHERE codCliente = " + id);
+    }
  
     public List retrieveBySimilarName(String nome) {
         return this.retrieve("SELECT * FROM animal WHERE nome LIKE '%" + nome + "%'");
@@ -97,7 +92,7 @@ public class AnimalDAO extends DAO {
     public void update(Animal animal) {
         try {
             PreparedStatement stmt;
-            stmt = DAO.getConnection().prepareStatement("UPDATE animal SET nome=?, nascimento=?, sexo=?, codEspecie=?, codCliente=? WHERE id=?");
+            stmt = DAO.getConnection().prepareStatement("UPDATE animal SET nome=?, nascimento=?, sexo=?, codEspecie=?, codCliente=? WHERE codigo=?");
             stmt.setString(1, animal.getNome());
             stmt.setString(2, animal.getNascimento().toString());            
             stmt.setString(3, Character.toString(animal.getSexo()));

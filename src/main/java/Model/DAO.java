@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author saina
+ * @author Tauan Rodrigues 247599
  */
 public abstract class DAO {
 
@@ -112,11 +112,12 @@ public abstract class DAO {
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS tratamento( \n"
                     + "codigo INTEGER PRIMARY KEY, \n"
                     + "codAnimal INTEGER, \n"
-                    + "dataInicio DATE, \n"
-                    + "dataFim DATE, \n");
+                    + "dataInicio VARCHAR, \n"
+                    + "dataFim VARCHAR, \n");
             executeUpdate(stmt);
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS consulta( \n"
-                    + "dara DATE PRIMARY KEY, \n"
+                    + "codigo INTEGER PRIMARY KEY, \n"
+                    + "data VARCHAR, \n"
                     + "sintomas TEXT, \n"
                     + "historico TEXT, \n"
                     + "codAnimal INTEGER, \n"
@@ -125,6 +126,7 @@ public abstract class DAO {
             executeUpdate(stmt);
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS exame( \n"
                     + "codigo INTEGER PRIMARY KEY, \n"
+                    + "nome VARCHAR, \n"
                     + "descricao VARCHAR, \n"
                     + "resultado VARCHAR); \n");
             executeUpdate(stmt);

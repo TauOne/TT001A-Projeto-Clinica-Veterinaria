@@ -4,21 +4,23 @@
  */
 package Model;
 
-import java.util.Date;
+import java.time.Instant;
 
 /**
  *
- * @author saina
+ * @author Tauan Rodrigues 247599
  */
 public class Consulta {
-    private Date data;
+    private int codigo;
+    private Instant data;
     private String sintomas;
     private String historico;
     private int codAnimal;
     private int codVeterinario;
     private int codTratamento;
 
-    public Consulta(Date data, String sintomas, String historico, int idAnimal, int idVeterinario, int idTratamento) {
+    public Consulta(int codigo, Instant data, String sintomas, String historico, int idAnimal, int idVeterinario, int idTratamento) {
+        this.codigo = codigo;
         this.data = data;
         this.sintomas = sintomas;
         this.historico = historico;
@@ -27,7 +29,7 @@ public class Consulta {
         this.codTratamento = idTratamento;
     }
 
-    public Date getData() {
+    public Instant getData() {
         return data;
     }
     
@@ -57,5 +59,9 @@ public class Consulta {
 
     public int getCodTratamento() {
         return codTratamento;
+    }
+
+    public int getCodigo() {
+        return codigo;
     }
 }

@@ -6,7 +6,7 @@ package Model;
 
 /**
  *
- * @author saina
+ * @author Tauan Rodrigues 247599
  */
 public class Especie {
     private int codigo;
