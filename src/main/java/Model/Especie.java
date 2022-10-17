@@ -28,6 +28,10 @@ public class Especie {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
     
+    @Override
+    public String toString(){
+        String desc = "Especie: (codigo=" + codigo + ", nome=" + nome + ")";
+        return desc + "\n";
+    }
 }

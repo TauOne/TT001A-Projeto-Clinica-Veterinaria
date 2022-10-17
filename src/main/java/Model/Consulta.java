@@ -4,22 +4,20 @@
  */
 package Model;
 
-import java.time.Instant;
-
 /**
  *
  * @author Tauan Rodrigues 247599
  */
 public class Consulta {
     private int codigo;
-    private Instant data;
+    private String data;
     private String sintomas;
     private String historico;
     private int codAnimal;
     private int codVeterinario;
     private int codTratamento;
 
-    public Consulta(int codigo, Instant data, String sintomas, String historico, int idAnimal, int idVeterinario, int idTratamento) {
+    public Consulta(int codigo, String data, String sintomas, String historico, int idAnimal, int idVeterinario, int idTratamento) {
         this.codigo = codigo;
         this.data = data;
         this.sintomas = sintomas;
@@ -29,7 +27,7 @@ public class Consulta {
         this.codTratamento = idTratamento;
     }
 
-    public Instant getData() {
+    public String getData() {
         return data;
     }
     

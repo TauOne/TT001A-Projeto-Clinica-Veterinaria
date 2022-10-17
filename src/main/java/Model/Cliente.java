@@ -33,4 +33,10 @@ public class Cliente extends Pessoa{
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    /*@Override
+    public String toString(){
+        String desc = "Cliente(nome=" + nome + ", endereço=" + ", telefone=" + telefone + ", CEP=" + cep + ", email=" + email + ")";
+        return desc + "\n";
+    }*/
 }

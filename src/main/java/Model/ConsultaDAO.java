@@ -8,7 +8,6 @@ import static Model.DAO.getConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -50,7 +49,7 @@ public class ConsultaDAO extends DAO{
     private Consulta buildObject(ResultSet rs) {
         Consulta consulta = null;
         try {
-            consulta = new Consulta(rs.getInt("codigo"), Instant.parse(rs.getString("nascimento")), rs.getString("sintomas"), rs.getString("historico"), rs.getInt("codAnimal"), rs.getInt("codVeterinario"), rs.getInt("codTratamento"));
+            consulta = new Consulta(rs.getInt("codigo"), rs.getString("nascimento"), rs.getString("sintomas"), rs.getString("historico"), rs.getInt("codAnimal"), rs.getInt("codVeterinario"), rs.getInt("codTratamento"));
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());
         }
@@ -83,12 +82,12 @@ public class ConsultaDAO extends DAO{
         return (consultas.isEmpty()?null:consultas.get(0));
     }
     
-    public Consulta retrieveByDate(Instant date) {
+    public Consulta retrieveByDate(String date) {
         List<Consulta> consultas = this.retrieve("SELECT * FROM consulta WHERE data = " + date);
         return (consultas.isEmpty()?null:consultas.get(0));
     }
  
-    public List retrieveByPeriod(Instant data1, Instant data2) {
+    public List retrieveByPeriod(String data1, String data2) {
         return this.retrieve("SELECT * FROM consulta WHERE data > " + data1 + " and data < " + data2);
     }    
         
@@ -96,7 +95,7 @@ public class ConsultaDAO extends DAO{
         try {
             PreparedStatement stmt;
             stmt = DAO.getConnection().prepareStatement("UPDATE consulta SET data=?, sintomas=?, historico=?, codAnimal=?, codVeterinario=? codTratamento=? WHERE codigo=?");
-            stmt.setString(1, consulta.getData().toString());
+            stmt.setString(1, consulta.getData());
             stmt.setString(2, consulta.getSintomas());            
             stmt.setString(3, consulta.getHistorico());
             stmt.setInt(4, consulta.getCodAnimal());

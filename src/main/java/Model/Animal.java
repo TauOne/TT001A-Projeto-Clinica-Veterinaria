@@ -4,8 +4,6 @@
  */
 package Model;
 
-import java.time.Instant;
-
 /**
  *
  * @author Tauan
@@ -14,12 +12,12 @@ public class Animal {
 
     private int codigo;
     private String nome;
-    private Instant nascimento;
+    private String nascimento;
     private char sexo;
     private int codEspecie;
     private int codCliente;
 
-    public Animal(int codigo, String nome, Instant nascimento, char sexo, int codEspecie, int codCliente) {
+    public Animal(int codigo, String nome, String nascimento, char sexo, int codEspecie, int codCliente) {
         this.codigo = codigo;
         this.nome = nome;
         this.nascimento = nascimento;
@@ -44,7 +42,7 @@ public class Animal {
         return nome;
     }
 
-    public Instant getNascimento() {
+    public String getNascimento() {
         return nascimento;
     }
 
@@ -56,12 +54,17 @@ public class Animal {
         this.nome = nome;
     }
 
-    public void setNascimento(Instant nascimento) {
+    public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
 
     public void setSexo(char sexo) {
         this.sexo = sexo;
     }
-
+    
+    @Override
+    public String toString(){
+        String desc = "Animal(nome=" + nome + ", nacimento=" + nascimento + ", sexo=" + sexo + ", Especie=" + codEspecie + ", Cliente=" + codCliente + ")";
+        return desc + "\n";
+    }
 }

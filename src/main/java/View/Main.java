@@ -5,6 +5,9 @@
 
 package View;
 
+import Model.AnimalDAO;
+
+
 /**
  *
  * @author Tauan Rodrigues 247599
@@ -12,6 +15,6 @@ package View;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
     }
 }

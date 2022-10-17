@@ -29,7 +29,7 @@ public class EspecieDAO extends DAO{
         return (instance==null?(instance = new EspecieDAO()):instance);
     }
 
-    public Especie create(String nome, String endereco, String telefone, String cep, String email) {
+    public Especie create(String nome) {
         try {
             PreparedStatement stmt;
             stmt = DAO.getConnection().prepareStatement("INSERT INTO especie (nome) VALUES (?)");

@@ -97,7 +97,7 @@ public abstract class DAO {
                     + "codCliente INTEGER, \n"
                     + "nome VARCHAR, \n"
                     + "nascimento VARCHAR, \n"
-                    + "sexo CHAR, \n");
+                    + "sexo CHAR); \n");
             executeUpdate(stmt);
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS especie( \n"
                     + "codigo INTEGER PRIMARY KEY, \n"
@@ -107,13 +107,13 @@ public abstract class DAO {
                     + "codigo INTEGER PRIMARY KEY, \n"
                     + "nome VARCHAR, \n"
                     + "endereco VARCHAR, \n"
-                    + "telefone VARCHAR, \n");
+                    + "telefone VARCHAR); \n");
             executeUpdate(stmt);
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS tratamento( \n"
                     + "codigo INTEGER PRIMARY KEY, \n"
                     + "codAnimal INTEGER, \n"
                     + "dataInicio VARCHAR, \n"
-                    + "dataFim VARCHAR, \n");
+                    + "dataFim VARCHAR); \n");
             executeUpdate(stmt);
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS consulta( \n"
                     + "codigo INTEGER PRIMARY KEY, \n"
@@ -122,7 +122,7 @@ public abstract class DAO {
                     + "historico TEXT, \n"
                     + "codAnimal INTEGER, \n"
                     + "codVeterinario INTEGER, \n"
-                    + "codTratamento INTEGER, \n");
+                    + "codTratamento INTEGER); \n");
             executeUpdate(stmt);
             stmt = DAO.getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS exame( \n"
                     + "codigo INTEGER PRIMARY KEY, \n"
@@ -130,7 +130,7 @@ public abstract class DAO {
                     + "descricao VARCHAR, \n"
                     + "resultado VARCHAR); \n");
             executeUpdate(stmt);
-            stmt = DAO.getConnection().prepareStatement("INSERT OR IGNORE INTO especie (codigo, nome) VALUES (1, 'Peixe')");
+            stmt = DAO.getConnection().prepareStatement("INSERT OR IGNORE INTO especie (codigo, nome) VALUES (1, 'cachorro')");
             executeUpdate(stmt);
             return true;
         } catch (SQLException ex) {

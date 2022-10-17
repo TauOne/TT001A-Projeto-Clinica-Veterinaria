@@ -8,7 +8,6 @@ import static Model.DAO.getConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -30,13 +29,13 @@ public class TratamentoDAO extends DAO{
         return (instance==null?(instance = new TratamentoDAO()):instance);
     }
 
-    public Tratamento create(int codAnimal, Instant dataInicio, Instant dataFim) {
+    public Tratamento create(int codAnimal, String dataInicio, String dataFim) {
         try {
             PreparedStatement stmt;
             stmt = DAO.getConnection().prepareStatement("INSERT INTO tratamento (codAnimal, dataInicio, dataFim) VALUES (?,?,?)");
             stmt.setInt(1, codAnimal);
-            stmt.setString(2, dataInicio.toString());
-            stmt.setString(3, dataFim.toString());
+            stmt.setString(2, dataInicio);
+            stmt.setString(3, dataFim);
             executeUpdate(stmt);
         } catch (SQLException ex) {
             Logger.getLogger(TratamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -47,7 +46,7 @@ public class TratamentoDAO extends DAO{
     private Tratamento buildObject(ResultSet rs) {
         Tratamento tratamento = null;
         try {
-            tratamento = new Tratamento(rs.getInt("codigo"), rs.getInt("codAnimal"), Instant.parse(rs.getString("dataInicio")), Instant.parse(rs.getString("dataFim")));
+            tratamento = new Tratamento(rs.getInt("codigo"), rs.getInt("codAnimal"), rs.getString("dataInicio"), rs.getString("dataFim"));
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());
         }
@@ -84,12 +83,12 @@ public class TratamentoDAO extends DAO{
         return this.retrieve("SELECT * FROM tratamento WHERE codAnimal = " + codAnimal);
     }    
     
-    public Tratamento retrieveByInicio(Instant data) {
+    public Tratamento retrieveByInicio(String data) {
         List<Tratamento> tratamentos = this.retrieve("SELECT * FROM tratamento WHERE dataInicio = " + data);
         return (tratamentos.isEmpty()?null:tratamentos.get(0));
     }
     
-    public Tratamento retrieveByFim(Instant data) {
+    public Tratamento retrieveByFim(String data) {
         List<Tratamento> tratamentos = this.retrieve("SELECT * FROM tratamento WHERE dataFim = " + data);
         return (tratamentos.isEmpty()?null:tratamentos.get(0));
     }
@@ -99,8 +98,8 @@ public class TratamentoDAO extends DAO{
             PreparedStatement stmt;
             stmt = DAO.getConnection().prepareStatement("UPDATE tratamento SET codAnimal=?, dataInicio=?, dataFim=? WHERE id=?");
             stmt.setInt(1, tratamento.getCodAnimal());
-            stmt.setString(2, tratamento.getDataInicio().toString());            
-            stmt.setString(3, tratamento.getDataFim().toString());
+            stmt.setString(2, tratamento.getDataInicio());            
+            stmt.setString(3, tratamento.getDataFim());
             stmt.setInt(4, tratamento.getCodigo());
             executeUpdate(stmt);
         } catch (SQLException e) {

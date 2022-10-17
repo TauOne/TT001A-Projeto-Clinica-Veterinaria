@@ -4,9 +4,6 @@
  */
 package Model;
 
-import java.time.Instant;
-
-
 /**
  *
  * @author Tauan Rodrigues 247599
@@ -14,10 +11,10 @@ import java.time.Instant;
 public class Tratamento {
     private int codigo;
     private int codAnimal;
-    private Instant dataInicio;
-    private Instant dataFim;
+    private String dataInicio;
+    private String dataFim;
 
-    public Tratamento(int codigo, int codAnimal, Instant dataInicio, Instant dataFim) {
+    public Tratamento(int codigo, int codAnimal, String dataInicio, String dataFim) {
         this.codigo = codigo;
         this.codAnimal = codAnimal;
         this.dataInicio = dataInicio;
@@ -32,19 +29,19 @@ public class Tratamento {
         return codAnimal;
     }
 
-    public Instant getDataInicio() {
+    public String getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInico(Instant dataInico) {
+    public void setDataInico(String dataInico) {
         this.dataInicio = dataInico;
     }
 
-    public Instant getDataFim() {
+    public String getDataFim() {
         return dataFim;
     }
 
-    public void setDataFim(Instant dataFim) {
+    public void setDataFim(String dataFim) {
         this.dataFim = dataFim;
     }
 
